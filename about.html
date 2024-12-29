@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MIKE Shoes</title>
+    <style>
+        /* General reset and layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style-type: none;
+            flex-wrap: wrap;
+        }
+
+        .navbar li {
+            display: inline-block;
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            background-color: #555;
+        }
+
+        /* Main content */
+        main {
+            padding: 40px 5%;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .about-header p {
+            font-size: 20px;
+            color: #666;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .about-text h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .about-text ul {
+            list-style-type: none;
+        }
+
+        .about-text ul li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 280px;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Values section */
+        .values {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .values h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .values-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .value-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .footer-section {
+            width: 250px;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .footer-section a:hover {
+            color: #ddd;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-text, .about-image {
+                text-align: center;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-header h1 {
+                font-size: 28px;
+            }
+
+            .about-header p {
+                font-size: 18px;
+            }
+
+            .value-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Shoe Store Logo" class="logo">
+            </a>
+        </div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shoes</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="about-header">
+            <h1>About MIKE Shoes</h1>
+            <p>Your trusted destination for stylish and comfortable footwear.</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>At MIKE Shoes, we are passionate about providing high-quality footwear for every occasion. Whether you're looking for sneakers, loafers, or running shoes, our collection is designed to meet the needs of modern lifestyles.</p>
+                <h2>Our Mission</h2>
+                <p>Our mission is to deliver exceptional footwear that combines style, comfort, and durability. We believe everyone deserves the perfect pair of shoes, and we strive to make that a reality.</p>
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>Wide range of stylish and comfortable footwear</li>
+                    <li>Commitment to quality and customer satisfaction</li>
+                    <li>Affordable pricing with frequent deals and discounts</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="team.jpeg" alt="Our Team">
+            </div>
+        </section>
+
+        <section class="values">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Quality</h3>
+                    <p>We prioritize excellence in every product we offer.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>Our designs reflect the latest trends and technologies.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Customer Focus</h3>
+                    <p>Your satisfaction is our top priority.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@mikeshoes.com</p>
+                <p>Phone: 9989003229</p>
+                <p>Address: GCOE Nagpur, New Khapri, Nagpur, Maharashtra</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+            </div>
+        </div>
+        <p>&copy; 2024 MIKE Shoes. All rights reserved.</p>
+    </footer>
+</body>
+</html>

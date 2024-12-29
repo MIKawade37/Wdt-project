@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Shoes - MIKE Shoes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+header {
+    background-color: #444;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-container img {
+    height: 50px;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #666;
+    border-radius: 5px;
+}
+
+/* Responsive Navbar */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu-toggle i {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #444;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Main Section Styles */
+main {
+    padding: 2rem;
+}
+
+.shop-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.shop-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.shop-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Categories Section */
+.product-categories {
+    margin: 2rem 0;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.category {
+    text-align: center;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.category h3 {
+    margin-bottom: 0.5rem;
+}
+
+.category .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #444;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.category .btn:hover {
+    background-color: #666;
+}
+
+/* Product List Section */
+.product-list {
+    margin: 2rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    color: #444;
+    font-weight: bold;
+}
+
+.card .add-to-cart {
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card .add-to-cart:hover {
+    background-color: #666;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #444;
+    color: #fff;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.footer-section {
+    text-align: left;
+}
+
+.footer-section h3 {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .shop-header h1 {
+        font-size: 2rem;
+    }
+
+    .shop-header p {
+        font-size: 1rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+}
+
+        
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Shoe Store Logo" class="logo">
+            </a>
+        </div>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html" class="active">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </header>
+    
+
+    <main>
+        <section class="shop-header">
+            <h1>Explore Our Collection</h1>
+            <p>From casual wear to performance gear, we have something for everyone.</p>
+        </section>
+
+        <section class="product-categories">
+            <h2>Categories</h2>
+            <div class="categories-grid">
+                <div class="category">
+                    <img src="menshoes.jpg" alt="Men's Shoes">
+                    <h3>Men's Shoes</h3>
+                    <a href="#mens-shoes" class="btn">Shop Now</a>
+                </div>
+                <div class="category">
+                    <img src="wonenshoes.jpg" alt="Women's Shoes">
+                    <h3>Women's Shoes</h3>
+                    <a href="#womens-shoes" class="btn">Shop Now</a>
+                </div>
+                <div class="category">
+                    <img src="kidshoes.jpg" alt="Kids' Shoes">
+                    <h3>Kids' Shoes</h3>
+                    <a href="#kids-shoes" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="mens-shoes" class="product-list">
+            <h2>Men's Shoes</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="m1.jpg" alt="Men's Running Shoes">
+                    <h3>Men's Running Shoes</h3>
+                    <p>$49.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Men\'s Running Shoes', 49.99,'m1.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="m2.jpg" alt="Men's Sneakers">
+                    <h3>Men's Sneakers</h3>
+                    <p>$39.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Men\'s Sneakers', 39.99,'m2.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="m3.jpg" alt="Men's Loafers">
+                    <h3>Men's Loafers</h3>
+                    <p>$59.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Men\'s Loafers', 59.99,'m3.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="m4.jpg" alt="Men's Slides">
+                    <h3>Men's Slides</h3>
+                    <p>$29.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Men\'s Slides', 29.99,'m4.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="womens-shoes" class="product-list">
+            <h2>Women's Shoes</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="w1.jpg" alt="Women's Running Shoes">
+                    <h3>Women's Running Shoes</h3>
+                    <p>$59.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Women\'s Running Shoes', 59.99,'w1.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="w2.jpg" alt="Women's Sneakers">
+                    <h3>Women's Sneakers</h3>
+                    <p>$49.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Women\'s Sneakers', 49.99,'w2.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="w3.jpg" alt="Women's Loafers">
+                    <h3>Women's Loafers</h3>
+                    <p>$39.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Women\'s Loafers', 39.99,'w3.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="w4.jpg" alt="Women's Slides">
+                    <h3>Women's Slids</h3>
+                    <p>$29.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Women\'s Slides', 29.99,'w4.jpg')">Add to Cart</button>
+                </div>
+                <!-- Add more women's shoes here -->
+            </div>
+        </section>
+
+        <section id="kids-shoes" class="product-list">
+            <h2>Kids' Shoes</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="k1.jpg" alt="Kids Running Shoes">
+                    <h3>Kids Running Shoes</h3>
+                    <p>$44.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Kids Running Shoes', 44.99,'k1.jpg')">Add to Cart</button>
+                </div>
+                
+                <div class="card">
+                    <img src="k2.jpg" alt="Kids Sneakers">
+                    <h3>Kids Sneakers </h3>
+                    <p>$24.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Kids Sneakerss', 24.99,'k2.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="k3.jpg" alt="Kids boots">
+                    <h3>Kids boots</h3>
+                    <p>$54.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Kids boots', 54.99,'k3.jpg')">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="k4.jpg" alt="Kids Sandals">
+                    <h3>Kids Sandals</h3>
+                    <p>$34.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Kids Sandals', 34.99,'k4.jpg')">Add to Cart</button>
+                </div>
+                <!-- Add more kids' shoes here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <p>FAQs</p>
+                <p>Returns</p>
+                <p>Shipping Info</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@mikeshoes.com</p>
+                <p>Phone: 9989003229</p>
+                <p>Address: GCOE Nagpur, New Khapri, Nagpur, Maharashtra</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+            </div>
+        </div>
+        <p>&copy; 2024 MIKE Shoes. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navbar = document.querySelector(".navbar");
+        
+            menuToggle.addEventListener("click", () => {
+                navbar.classList.toggle("active");
+            });
+        });
+        
+        function addToCart(name, price, image) {
+    // Get existing cart data from localStorage or initialize it
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add the new item
+    cart.push({ name, price, image });
+
+    // Update localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Notify user
+    alert(`${name} has been added to your cart.`);
+}
+
+
+
+        </script>
+</body>
+</html>

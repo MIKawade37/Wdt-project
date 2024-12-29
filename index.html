@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIKE Shoes</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #222;
+            color: #fff;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar li {
+            margin: 0 10px;
+        }
+
+        .navbar li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .navbar li a:hover {
+            background: #f0a500;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('bbwall.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #f0a500;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #333;
+            color: #f0a500;
+        }
+
+        .hero button a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .category-card {
+            width: 250px;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: #f0a500;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #222;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .footer .Ftext {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .Ftext p {
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .main-container {
+                flex-direction: column;
+            }
+
+            .category-card {
+                width: 90%;
+                margin: 10px 0;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Shoe Store Logo" class="logo">
+            </a>
+        </div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to MIKE Shoe Store</h1>
+            <p>Find your perfect pair of shoes</p>
+            <button><a href="shop.html">Shop Shoes</a></button>
+        </section>
+    </main>
+
+    <div class="main-container">
+        <!-- Category 1: Men's Shoes -->
+        <div class="category-card" onclick="window.location.href='shop.html'">
+            <img src="menshoes.jpg" alt="Men's Shoes">
+            <h3>Men's Shoes</h3>
+        </div>
+
+        <!-- Category 2: Women's Shoes -->
+        <div class="category-card" onclick="window.location.href='shop.html'">
+            <img src="wonenshoes.jpg" alt="Women's Shoes">
+            <h3>Women's Shoes</h3>
+        </div>
+
+        <!-- Category 3: Kids Shoes -->
+        <div class="category-card" onclick="window.location.href='shop.html'">
+            <img src="kidshoes.jpg" alt="Kids Shoes">
+            <h3>Kids Shoes</h3>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2>Step Into Style</h2>
+        <p>Explore our latest collection and find your perfect fit.</p>
+        <button onclick="location.href='about.html'">Learn More</button>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="Ftext">
+                <h1>MIKE</h1>
+                <p>Service</p>
+                <p>Customer</p>
+                <p>Satisfaction</p>
+            </div>
+            <div class="Ftext">
+                <h3>About Us</h3>
+                <p>Address: GCOENagpur,<br>New Khapri<br>Nagpur, Maharashtra.</p>
+            </div>
+            <div class="Ftext">
+                <h3>Contact</h3>
+                <p>9989003229</p>
+                <p>Customer Support</p>
+                <p>Coming Soon</p>
+            </div>
+            <div class="Ftext">
+                <h3>Trending</h3>
+                <p>New Arrivals</p>
+                <p>Popular Picks</p>
+                <p>Seasonal Favorites</p>
+            </div>
+        </div>
+        <p>&copy; 2024 MIKE Shoe Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
